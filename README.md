@@ -72,6 +72,19 @@ Make sure to configure the connection details for the Art Institute of Chicago A
 
      ```bash
      npm install
+     ```
+    The frontend of this project uses **MUI (Material-UI)** for styling and UI components. 
+    To ensure the project works correctly, you need to install the required MUI packages. Run the following command in the frontend directory:
+   ```bash
+    npm install @mui/material @emotion/react @emotion/styled
+    npm install @mui/material @mui/styled-engine-sc styled-components
+    npm install @mui/icons-material
+   ```
+    **Why MUI?**
+
+    MUI provides a robust, customizable, and accessible library of foundational and advanced UI components for React. It simplifies creating visually appealing and responsive designs.
+    For more details about MUI, visit the official documentation [https://mui.com/](url).
+
 3. Configure the Backend URL:
     - Create a **.env** file in the root of your frontend project (if it doesn't already exist)
     - Declare a variable for the backend API URL in the **.env** file:
