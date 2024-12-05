@@ -53,7 +53,6 @@ Make sure to configure the connection details for the Art Institute of Chicago A
       - Set the correct main class (VerodegitApplication) and click **OK**.
       - Then click the **Run** button (green play icon) to start the backend server.
 
-The backend server will be available at **http://localhost:8080**.
 
 ### 2. Frontend React
 
@@ -76,16 +75,7 @@ Ensure the frontend is pointing to the correct backend API URL (e.g., http://loc
    npm start
 The frontend will be accessible at [http://localhost:3000](url)
 
-### 3. Tests
-
-- **Backend**: To run the backend tests using Maven, execute the following command:
-   ```bash
-   mvn test
-- **Frontend**: To run the frontend tests, use the following command:
-   ```bash
-   npm test
-
-### 4. Project Structure
+### 3. Project Structure
 
 Here is the main structure of the project:
 
@@ -105,7 +95,7 @@ Here is the main structure of the project:
    ├── README.md      # Documentation
    ```
 
-### 5. Author
+### 4. Author
 - **Name**: Chebaane Mahmoud
 - **Contact**: [chebaane.mahmoud@gmail.com](url)
 
