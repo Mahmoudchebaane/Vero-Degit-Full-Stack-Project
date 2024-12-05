@@ -12,6 +12,10 @@ Before you begin, make sure you have the following installed on your machine:
 - **Node.js (version 16 or higher)**: Required for the frontend developed with React.
 - **npm or yarn**: Package manager for the frontend.
 - **Git**: If you are cloning the project from a Git repository.
+- **IDE**:
+  - **IntelliJ IDEA**: Recommended for working with the Spring Boot backend.
+  - **Visual Studio Code (VS Code)**: Recommended for working with the React frontend.
+
 
 ## Installation and Running
 
@@ -35,12 +39,21 @@ Make sure to configure the connection details for the Art Institute of Chicago A
    ```bash
    external.api.url=https://api.artic.edu/api/v1/artworks
      
-4. Build and run the backend:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
+4. Build and Run the Backend with IntelliJ IDEA:
 
-The backend server will be available at [http://localhost:8080](url)
+   - **Open the backend project in IntelliJ IDEA**.
+   - **Build the project**:
+      - Navigate to **Build** in the top menu.
+      - Select **Build Project** (or press **Ctrl+F9**).
+   
+   - **Run the backend**:
+      - To run the Spring Boot application, click the green play button next to the `Application` class (the class containing the `main` method) or configure the run configuration:
+      - Go to **Run > Edit Configurations**.
+      - Click the **+** button and choose **Spring Boot**.
+      - Set the correct main class (VerodegitApplication) and click **OK**.
+      - Then click the **Run** button (green play icon) to start the backend server.
+
+The backend server will be available at **http://localhost:8080**.
 
 ### 2. Frontend React
 
@@ -76,18 +89,25 @@ The frontend will be accessible at [http://localhost:3000](url)
 
 Here is the main structure of the project:
 
-```plaintext
-veroDegit/
-├── .github/      # GitHub-specific files 
-│   └── workflows/
-│       └── ci.yml   # GitHub Actions CI/CD workflow
-├── server-side/   # Backend source code (Spring Boot)
-│   ├── src/
-│   ├── pom.xml
-│   └── application.properties
-├── front-side/    # Frontend source code (React)
-│   ├── src/
-│   ├── package.json
-│   └── public/
-├── README.md      # Documentation
+   ```plaintext
+   veroDegit/
+   ├── .github/      # GitHub-specific files 
+   │   └── workflows/
+   │       └── ci.yml   # GitHub Actions CI/CD workflow
+   ├── server-side/   # Backend source code (Spring Boot)
+   │   ├── src/
+   │   ├── pom.xml
+   │   └── application.properties
+   ├── front-side/    # Frontend source code (React)
+   │   ├── src/
+   │   ├── package.json
+   │   └── public/
+   ├── README.md      # Documentation
+   ```
+
+### 5. Author
+- **Name**: Chebaane Mahmoud
+- **Contact**: [chebaane.mahmoud@gmail.com](url)
+
+
 
