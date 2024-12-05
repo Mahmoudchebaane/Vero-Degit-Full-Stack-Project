@@ -91,10 +91,20 @@ Make sure to configure the connection details for the Art Institute of Chicago A
      ```bash
      REACT_APP_API_URL=http://localhost:8080
      ```
+4. API Integration with Axios
 
+    The frontend of this project uses **Axios** for making HTTP requests to the backend API.
+
+    #### Install Axios
+    If Axios is not already installed, run the following command in the frontend directory:
+
+    ```bash
+    npm install axios
+    ```
 4. Start the React application:
    ```bash
    npm start
+   ```
 The frontend will be accessible at [http://localhost:3000](url)
 
 ### 3. Project Structure
