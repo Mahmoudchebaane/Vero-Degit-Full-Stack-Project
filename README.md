@@ -15,6 +15,7 @@ Before you begin, make sure you have the following installed on your machine:
 - **IDE**:
   - **IntelliJ IDEA**: Recommended for working with the Spring Boot backend.
   - **Visual Studio Code (VS Code)**: Recommended for working with the React frontend.
+- **Postman**: API testing tool for validating and exploring backend endpoints.
 
 
 ## Installation and Running
@@ -52,7 +53,11 @@ Make sure to configure the connection details for the Art Institute of Chicago A
       - Click the **+** button and choose **Spring Boot**.
       - Set the correct main class (VerodegitApplication) and click **OK**.
       - Then click the **Run** button (green play icon) to start the backend server.
-
+#### Test the Backend APIs using Postman:
+1. Open Postman and create a new collection.
+2. Add requests for each endpoint you want to test.
+3. Use the backend URL and test GET methods by providing the required parameters.
+4. Ensure the backend is running before sending requests.
 
 ### 2. Frontend React
 
@@ -68,7 +73,11 @@ Make sure to configure the connection details for the Art Institute of Chicago A
      ```bash
      npm install
 3. Configure the Backend URL:
-Ensure the frontend is pointing to the correct backend API URL (e.g., http://localhost:8080). Update the configuration file if needed (e.g., src/config.js).
+    - Create a **.env** file in the root of your frontend project (if it doesn't already exist)
+    - Declare a variable for the backend API URL in the **.env** file:
+     ```bash
+     REACT_APP_API_URL=http://localhost:8080
+     ```
 
 4. Start the React application:
    ```bash
