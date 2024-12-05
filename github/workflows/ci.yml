@@ -1,0 +1,50 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:
+    branches:
+      - main  
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+    name: Build and test Backend (Server-side)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  
+
+      - name: Set up Java 17 (pour le backend)
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'  
+      - name: Build backend
+        run: cd server-side && ./mvnw clean install  
+
+      - name: Run backend tests
+        run: cd server-side && ./mvnw test  
+
+  build-frontend:
+    runs-on: ubuntu-latest
+    name: Build and test Frontend (Front-side)
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 
+
+      - name: Set up Node.js 16 (pour le frontend)
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  
+
+      - name: Install frontend dependencies
+        run: cd front-side && npm install  
+
+      - name: Run frontend tests
+        run: cd front-side && npm test  
+      
+      - name: Build frontend
+        run: cd front-side && npm run build 
