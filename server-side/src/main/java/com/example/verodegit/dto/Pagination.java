@@ -8,7 +8,7 @@ public class Pagination {
     private int offset;
     private int totalPages;
 
-    @JsonProperty("total")
+    @JsonProperty("total") // Maps the "total" property from JSON to this getter method
     public int getTotal() {
         return total;
     }
@@ -47,6 +47,6 @@ public class Pagination {
     public void setNextUrl(String nextUrl) {
         this.nextUrl = nextUrl;
     }
-    // Autres getters et setters (total, limit, offset)
+
 }
 

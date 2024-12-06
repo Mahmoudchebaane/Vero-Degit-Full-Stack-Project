@@ -12,29 +12,30 @@ import java.util.List;
 @Service
 public class ExternalApiService {
 
-    @Value("${external.api.url}")
+    @Value("${external.api.url}") // Injects the URL of the external API from the application properties file
     private String externalApiUrl;
 
-    private final WebClient webClient;
+    private final WebClient webClient; // The WebClient instance to make HTTP requests
 
+    // Constructor to inject the WebClient dependency
     public ExternalApiService(WebClient webClient) {
         this.webClient = webClient;
     }
 
     public ApiResponse getArtworks(String query, int page, int limit) {
-        // Construire l'URL avec pagination
+        // Build the URL with the search query and pagination parameters
         String URL = externalApiUrl +
                 (query != null ? "/search?q=" + query : "?") +
                 "&fields=id,title,artist_title,description,date_display,place_of_origin,image_id,main_reference_number,artist_display" +
                 "&page=" + page +
                 "&limit=" + limit;
 
-        // Utilisation de WebClient pour effectuer l'appel à l'API externe
+        // Using WebClient to make the external API call and retrieve the response
         return webClient
                 .get()
                 .uri(URL)
                 .retrieve()
-                .bodyToMono(ApiResponse.class) // Récupérer toute la réponse
+                .bodyToMono(ApiResponse.class) // Retrieve the entire response
                 .block();
     }
 

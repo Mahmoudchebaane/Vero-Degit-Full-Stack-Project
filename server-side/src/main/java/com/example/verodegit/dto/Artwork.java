@@ -5,19 +5,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 public class Artwork {
-    @JsonProperty("id")
+    @JsonProperty("id") // // Maps the "id" property from the JSON to the "id" field in Java
     private int id;
-    @JsonProperty("title")
+    @JsonProperty("title") // Maps the JSON property "title" to this field
     private String title;
-    @JsonProperty("artist_title")
+    @JsonProperty("artist_title") // Maps the "artist_title" property from the JSON to the "artiste" field in Java
     private String artiste;
-    @JsonProperty("description")
+    @JsonProperty("description") // Maps the JSON property "description" to this field
     private String description;
 
-    @JsonProperty("place_of_origin")
+    @JsonProperty("place_of_origin") // Maps the JSON property "place_of_origin" to this field
     private String place;
 
-    @JsonProperty("image_id")
+    @JsonProperty("image_id") // Maps the JSON property "image_id" to this field
     private UUID image;
 
     public int getId() {

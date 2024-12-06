@@ -14,13 +14,19 @@ function List({ searchQuery }) {
   const [currentPage, setCurrentPage] = useState();
   const [totalPages, setTotalPages] = useState(1);
   const artPerPage = 12; 
+
+  // Function to handle page change in pagination
   const handlePageChange = (pageNumber) => {
     console.log("change in list", pageNumber);
     setCurrentPage(pageNumber);
   };
+  
+  // Effect hook to reset the page to 1 when searchQuery changes
   useEffect(() => {
     setCurrentPage(1); 
   }, [searchQuery]);
+  
+  // Effect hook to load data whenever searchQuery, currentPage, or artPerPage changes
   useEffect(() => {
     const loadData = async () => {
       setLoading(true); 
@@ -42,8 +48,8 @@ function List({ searchQuery }) {
     loadData();
   }, [searchQuery, currentPage, artPerPage]); 
 
-  if (loading) return <p>Loading data...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p>Loading data...</p>;   // Show loading message while data is being fetched
+  if (error) return <p>{error}</p>;   // Show error message if there is an error
 
   return (
     <div style={{ padding: "20px" }}>
@@ -57,6 +63,7 @@ function List({ searchQuery }) {
             justifyContent: "center",
           }}
         >
+        {/* Map through the data array and render a Card for each artwork */}
           {data.map((item) => (
             <Card key={item.id} sx={{ maxWidth: 345 }}>
               <CardMedia
@@ -65,8 +72,8 @@ function List({ searchQuery }) {
                 height="140"
                 image={
                   item.image_id
-                    ? `https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`
-                    : require("../image/notfound.png")
+                    ? `https://www.artic.edu/iiif/2/${item.image_id}/full/843,/0/default.jpg`   // Image URL if image_id exists
+                    : require("../image/notfound.png")          // Fallback image if no image_id is available
                 }
               />
               <CardContent>
@@ -94,12 +101,13 @@ function List({ searchQuery }) {
           ))}
           
         </div>
+        {/* Pagination component to handle page navigation */}
         <div className="row pt-4" style={{ paddingTop: "50px" }}>
             <PaginationRounded
               artPerPage={artPerPage}
-              onPageChange={handlePageChange}
-              totalPages={totalPages}
-              currentPage={currentPage}
+              onPageChange={handlePageChange} // Pass the handlePageChange function as a prop
+              totalPages={totalPages}         // Pass total number of pages
+              currentPage={currentPage}       // Pass current page number
             />
           </div>
         </>

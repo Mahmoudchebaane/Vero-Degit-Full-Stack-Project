@@ -1,10 +1,11 @@
 import { Pagination, Stack } from "@mui/material";
 import React from "react";
-
+// PaginationRounded component that renders a paginated navigation for artwork list
 const PaginationRounded = ({ currentPage, totalPages, onPageChange }) => {
-  const handlePageClick = (pageNumber) => {
+  // Handle page click event to trigger the onPageChange callback
+  const handlePageClick = (pageNumber) => { 
     if (onPageChange) {
-      onPageChange(pageNumber);
+      onPageChange(pageNumber); // Call onPageChange function with the new page number
     }
   };
   return (
@@ -13,7 +14,7 @@ const PaginationRounded = ({ currentPage, totalPages, onPageChange }) => {
         count={totalPages} 
         shape="rounded" 
         page={currentPage}
-        onChange={(event, pageNumber) => handlePageClick(pageNumber)} 
+        onChange={(event, pageNumber) => handlePageClick(pageNumber)}   // Handle page number change
         variant="outlined" 
         color="primary" 
       />
