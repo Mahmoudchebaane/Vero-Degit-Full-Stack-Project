@@ -18,7 +18,7 @@ public class ArtWorkController {
         this.externalApiService = externalApiService;
     }
 
-    @CrossOrigin(origins = "http://localhost:3001") // Autorise only localhost:3001
+    //@CrossOrigin(origins = "http://localhost:3001") // Autorise only localhost:3001
     @GetMapping
     public ApiResponse getArtWorks(
             @RequestParam(required = false) String search,  // Optional search query
